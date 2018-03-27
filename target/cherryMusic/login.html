@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>用户登录</title>
+	<link rel="icon" href="img/yt2.png" type="image/x-icon"/>
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<script type="text/javascript" src="js/login.js"></script>
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+	<div class="main-body">
+		<!--登录顶部-->
+		<div class="login-headr">
+			<img src="img/yt1.png">
+			<p>樱桃音乐</p>
+		</div>
+		<!--登录logo-->
+		<div class="login-logo"></div>
+		<!--登录主体div-->
+		<div class="login-main">
+			<div class="login-box" id="login-box">
+				<div class="l-static">
+        			<div class="l-tab-covers">
+            			<div class="l-tab-list current">密码登录</div>
+            			<div class="l-tab-list">短信登录</div>
+        			</div>
+        			<div class="static-module-covers">
+        				<!--  这个是登录的div-->
+            			<div class="pass-login-covers">
+                			<!-- 这个div用来显示报错信息  -->
+                			<div class="error-tips hide" id="pass-error-tips">
+                    			<span class="ipt-tips-default ipt-default-current js-err-l"></span>
+                			</div>
+	                		<div class="email">
+	                    		<input type="text" id="username" name="username" oninput="changeLoginbtn()" placeholder="用户名" autocomplete="off" maxlength="32" class="text-style ipt-default-current">
+	                		</div>
+	                		<div class="password">
+	                    		
+	                    		<input type="password" id="password" name="password" oninput="changeLoginbtn()" placeholder="密码" maxlength="40" autocomplete="off" class="text-style ipt-default-current">
+	                		</div>
+	                		
+			                <div class="login">
+			                    <!--  btn-disabled  btn-default-main -->
+			                    <input type="button" id="loginbtn" class="btn-current-big btn-disabled" onclick="login()" value="登录">
+			                    <input type="button" id="" class="btn-current-big btn-default-main loadding-btn hide" value="登录中...">
+			                </div>
+			                <div class="auto-login">
+			                    <label class="auto-login-cd" id="autolog-label">
+			                    <input type="checkbox" name="autolog" id="autolog" class="auto-login-cd" checked>下次自动登录</label>
+			                    <div class="login-links">
+			                        <a href="" class="">忘记密码</a>
+			                        &nbsp; | &nbsp;<a href="register.html" class="">注册</a>
+			                    </div>
+			                </div>
+            			</div>
+            		</div>
+			       	<div class="third-login-box">
+			       		<p class="third-account">第三方账号登录</p>
+				        <div class="account-login">
+				            <a  class="wechat-login"></a>
+				            <a  class="weibo-login"></a>
+				            <a  class="qq-login"></a>
+				        </div>
+			       	</div>
+    			</div>
+			</div>
+		</div>
+		<!--登录底部-->
+		<div class="login-footer"></div>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var count = 0;
+
+      		$("#autolog-label").click(function(){
+      			count++;
+      			var label = $("#autolog-label").attr("class");
+      			if (count/2 != 0) {
+      				if (label == "auto-login-cd") {
+      					$("#autolog-label").attr("class","auto-login-c");
+      					$("#autolog").attr("class","auto-login-c");
+      				}else{
+      					$("#autolog-label").attr("class","auto-login-cd");
+      					$("#autolog").attr("class","auto-login-cd");
+      				}
+      			}
+      			
+      		});
+        })
+    	function login(){
+    		var username = $("#username");
+    		var password = $("#password");
+			alert("123ss"+username.val()+"+"+password.val());
+
+    		var param = "user/login?username="+username.val()+"&password="+password.val();
+
+    		$.ajax({
+        		url:param,
+			    type:"POST",
+			    dataType:"html",
+
+			    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',//防止乱码
+			    success:function(data){
+			        if(data.msg == 404){
+			            alert("您输入的用户名或密码有错！");
+			            username.focus();
+			            return false;
+			        }else{
+                        alert("ojbk");
+			             window.location.href = "index.html";//跳转到主页
+			        }
+			    }
+			});
+    	}
+
+	</script>
+</body>
+</html>

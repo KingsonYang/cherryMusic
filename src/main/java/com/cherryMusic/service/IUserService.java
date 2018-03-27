@@ -7,6 +7,6 @@ import com.cherryMusic.model.User;
  */
 public interface IUserService {
 
-    public User selectUser(long userId);
+    public User selectUser(User user);
 
 }

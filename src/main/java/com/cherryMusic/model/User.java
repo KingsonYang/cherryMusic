@@ -1,40 +1,43 @@
 package com.cherryMusic.model;
 
-import java.util.Date;
+import java.sql.Date;
 
+/**
+ * create table users (
+ id int(8) not null AUTO_INCREMENT,
+ username varchar(40) DEFAULT NULL,
+ password varchar(40) DEFAULT NULL,
+ role_id int(2),
+ create_time datetime DEFAULT NULL,
+ update_time datetime DEFAULT NULL,
+ PRIMARY KEY (`id`),
+ UNIQUE KEY `id` (`id`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+ */
 public class User {
+    public User(int id, String username, String password, Date createtime, Date updatetime) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.createtime = createtime;
+        this.updatetime = updatetime;
+    }
 
-    private long id;
-    private String email;
-    private String password;
+    public User() {
+    }
+
+    private int id;
     private String username;
-    private String role;
-    private int status;
-    private Date regTime;
-    private String regIp;
+    private String password;
+    private Date createtime;
+    private Date updatetime;
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getUsername() {
@@ -45,36 +48,27 @@ public class User {
         this.username = username;
     }
 
-    public String getRole() {
-        return role;
+    public String getPassword() {
+        return password;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public int getStatus() {
-        return status;
+    public Date getCreatetime() {
+        return createtime;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
     }
 
-    public Date getRegTime() {
-        return regTime;
+    public Date getUpdatetime() {
+        return updatetime;
     }
 
-    public void setRegTime(Date regTime) {
-        this.regTime = regTime;
+    public void setUpdatetime(Date updatetime) {
+        this.updatetime = updatetime;
     }
-
-    public String getRegIp() {
-        return regIp;
-    }
-
-    public void setRegIp(String regIp) {
-        this.regIp = regIp;
-    }
-
 }

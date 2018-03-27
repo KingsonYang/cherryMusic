@@ -18,7 +18,7 @@ public class UserServiceImpl implements IUserService{
     private UserDao userDao;
 
 
-    public User selectUser(long userId) {
-        return this.userDao.selectUser(userId);
+    public User selectUser(User user) {
+        return this.userDao.selectUser(user);
     }
 }

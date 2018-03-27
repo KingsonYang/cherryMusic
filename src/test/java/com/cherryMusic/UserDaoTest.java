@@ -21,9 +21,11 @@ public class UserDaoTest {
 
     @Test
     public void testSelectUser() throws Exception {
-        long id = 1;
-        User user = dao.selectUser(id);
-        System.out.println(user.getUsername());
+        User user = new User();
+        user.setUsername("yqs");
+        user.setPassword("123456");
+        User use = dao.selectUser(user);
+        System.out.println(use.getUsername());
     }
 
 }
