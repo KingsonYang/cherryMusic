@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+    <script type="text/javascript" src="../../js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<button onclick="getList()">获取音乐列表</button>
+<div></div>
+<script>
+    var musicData;
+    function getList() {
+        $.ajax({
+            url:"/portal/list",
+            type:"POST",
+            dataType:"json",
+            data:{
+                condition : "周"
+            },
+            success:function (data) {
+                musicData = data.music;
+                $.each(data.music,function (k,v) {
+                    alert(k);
+                    alert(v.singer);
+                })
+            }
+        })
+    }
+</script>
+</body>
+</html>

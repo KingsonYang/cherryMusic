@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cherryMusic.dao.MusicsDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.cherryMusic.model.Musics">
+        <id column="id" property="id" />
+        <result column="title" property="title" />
+        <result column="singer" property="singer" />
+        <result column="special" property="special" />
+        <result column="time" property="time" />
+        <result column="url" property="url" />
+        <result column="click" property="click" />
+        <result column="role_id" property="roleId" />
+        <result column="language" property="language" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, title, singer, special, time, url, click, role_id AS roleId,language
+    </sql>
+
+    <select id="selectList" resultMap="BaseResultMap" parameterType="String">
+        SELECT * FROM musics WHERE singer like #{condition} OR title LIKE #{condition}
+    </select>
+
+    <select id="selectById" resultMap="BaseResultMap" parameterType="int">
+        SELECT * FROM musics WHERE id = #{id}
+    </select>
+
+</mapper>

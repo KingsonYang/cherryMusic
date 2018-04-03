@@ -16,8 +16,10 @@
     <!-- 配置数据库相关参数properties的属性：${url} -->
     <context:property-placeholder location="classpath:jdbc.properties"/>
 
+
     <!-- 数据库连接池 -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+
         <property name="driverClass" value="${jdbc.driver}"/>
         <property name="jdbcUrl" value="${jdbc.url}"/>
         <property name="user" value="${jdbc.username}"/>

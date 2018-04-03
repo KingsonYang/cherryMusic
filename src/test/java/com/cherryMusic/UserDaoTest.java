@@ -22,7 +22,7 @@ public class UserDaoTest {
     @Test
     public void testSelectUser() throws Exception {
         User user = new User();
-        user.setUsername("yqs");
+        user.setUsername("admin");
         user.setPassword("123456");
         User use = dao.selectUser(user);
         System.out.println(use.getUsername());

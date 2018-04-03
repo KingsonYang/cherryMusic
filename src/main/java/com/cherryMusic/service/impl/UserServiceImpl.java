@@ -1,5 +1,6 @@
 package com.cherryMusic.service.impl;
 
+import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.cherryMusic.dao.UserDao;
 import com.cherryMusic.model.User;
 import com.cherryMusic.service.IUserService;
@@ -12,7 +13,7 @@ import javax.annotation.Resource;
  */
 
 @Service("userService")
-public class UserServiceImpl implements IUserService{
+public class UserServiceImpl extends ServiceImpl<UserDao, User> implements IUserService{
 
     @Resource
     private UserDao userDao;

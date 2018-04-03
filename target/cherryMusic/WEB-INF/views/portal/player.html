@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Language" content="zh-cn" />
+    <meta name="applicable-device" content="pc">
+    <title>樱桃音乐</title>
+    <link rel="shortcut icon" href="../../img/yt2.png">。
+    <link rel="canonical" href="//sherrymusic.vip/portal/player.html" />
+    <link rel="stylesheet" href="../../../css/player.css" />
+    <script type="text/javascript" src="../../../js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<h1 class="player_logo"><a href="#" rel="noopener" target="_blank"><img class="player_logo__pic" srcset="../../../img/yt6.png@2x.png 2x" src="../../../img/yt6.png" alt="樱桃音乐"></a></h1>
+<div class="mod_player_login">
+    <div id="player_login" style="display:none;">
+        <a class="player_login__link" href="javascripr:;">
+        </a>
+        <a href="javascript:;" class="player_login__out js_logout" data-stat="y_new.player.header.logout">退出</a>
+        <a class="player_login__link player_login__link--set js_opts_login" href="javascript:;"><span class="player_login__txt">设置</span></a>
+    </div>
+    <a class="player_login__link player_login__link--unlogin js_login" data-stat="y_new.player.header.login" href="javascript:;">
+        <span class="player_login__txt">登录</span>
+    </a>
+    <a class="player_login__link player_login__link--set js_opts_unlogin" href="javascript:;"><span class="player_login__txt">设置</span></a>
+</div>
+<!--播放主页面-->
+<div class="mod_player">
+    <div class="player__hd"></div>
+    <div class="player__bd">
+        <!-- 默认 -->
+        <div class="player_style_normal js_box js_full_box">
+            <div class="mod_songlist_toolbar">
+                <a href="javascript:;" class="mod_btn js_all_like" data-stat="y_new.player.songlist.loveall"><i class="mod_btn_green__icon_like"></i>收藏<span class="mod_btn__border"></span></a>
+                <a href="javascript:;" class="mod_btn js_all_fav" data-stat="y_new.player.songlist.addall"><i class="mod_btn_green__icon_add"></i>添加到<span class="mod_btn__border"></span></a>
+                <a href="javascript:;" class="mod_btn js_all_down" data-stat="y_new.player.songlist.downloadall"><i class="mod_btn_green__icon_down"></i>下载<span class="mod_btn__border"></span></a>
+                <a href="javascript:;" class="mod_btn js_all_delete" data-stat="y_new.player.songlist.deleteall"><i class="mod_btn_green__icon_delete"></i>删除<span class="mod_btn__border"></span></a>
+                <a href="javascript:;" class="mod_btn js_all_deleted" data-stat="y_new.player.songlist.deleteallonce"><i class="mod_btn_green__icon_clear"></i>清空列表<span class="mod_btn__border"></span></a>
+            </div>
+            <div class="sb_scrollable sb_main sb_viewport">
+                <!-- 主要内容_S -->
+                <div class="sb_overview" style="height: 397px;">
+                    <!-- 编辑模式 mod_songlist--edit -->
+                    <div class="mod_songlist mod_songlist--edit">
+                        <i class="player_songlist__line"></i>
+                        <ul class="songlist__header">
+                            <li class="songlist__edit sprite">
+                                <input type="checkbox" class="songlist__checkbox js_check_all" data-stat="y_new.player.songlist.checkall">
+                            </li>
+                            <li class="songlist__header_name">歌曲</li>
+                            <li class="songlist__header_author">歌手</li>
+                            <li class="songlist__header_time">时长</li>
+                        </ul>
+                        <i class="player_songlist__line"></i>
+                        <!--歌曲填充-->
+                        <ul class="songlist__list" id="song_box">
+
+                            <!--<li mid="213023158" ix="10" data-page="player" data-stat="y_new.player.songlist.dbclick">
+                                <div class="songlist__item">
+                                    <div class="songlist__edit sprite">
+                                        <input type="checkbox" class="songlist__checkbox">
+                                    </div>
+                                    <div class="songlist__number">1</div>
+                                    <div class="songlist__songname">
+                                        <span class="songlist__songname_txt" title="告白气球">告白气球</span>
+                                        <div class="mod_list_menu">
+                                            <a href="javascript:;" class="list_menu__item list_menu__play js_play" data-stat="y_new.player.songlist.playone" data-page="player" title="播放"><i class="list_menu__icon_play"></i><span class="icon_txt">播放</span></a>
+                                            <a href="javascript:;" class="list_menu__item list_menu__add js_fav" data-stat="y_new.player.songlist.addone" title="添加到歌单" aria-haspopup="true">
+                                                <i class="list_menu__icon_add"></i>
+                                                <span class="icon_txt">添加到歌单</span>
+                                            </a>
+                                            <a href="javascript:;" class="list_menu__item list_menu__down js_down" style="display:none;" data-stat="y_new.player.songlist.downloadone" title="下载" aria-haspopup="true">
+                                                <i class="list_menu__icon_down"></i>
+                                                <span class="icon_txt">下载</span>
+                                            </a>
+                                            <a href="javascript:;" class="list_menu__item list_menu__share js_share" data-stat="y_new.player.songlist.shareone" title="分享" aria-haspopup="true">
+                                                <i class="list_menu__icon_share"></i>
+                                                <span class="icon_txt">分享</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="songlist__artist">
+
+
+                                        <a href="https://y.qq.com/n/yqq/singer/004LV0lb4fOw89.html" data-singermid="004LV0lb4fOw89" data-singerid="1121441" title="周杰伦" data-stat="y_new.player.songlist.singername" class="singer_name" data-page="player">周杰伦</a>
+
+                                    </div>
+                                    <div class="songlist__time">03:35</div>
+                                    <div class="songlist__other">
+
+                                    </div>
+                                    <a href="javascript:;" class="songlist__delete js_delete" data-page="player" data-stat="y_new.player.songlist.delete" title="删除"><span class="icon_txt">删除</span></a>
+                                    <i class="player_songlist__line"></i>
+                                </div>
+                            </li>-->
+                        </ul>
+                    </div>
+                </div>
+                <!-- 主要内容_E -->
+                <!-- 模拟滚动条 S -->
+                <div class="scroll_area sb vertical" style="display: none">
+                    <div class="scroll_bg sb_bg"><div class="scroll_bg_cont sb_bg_cont"></div></div>
+                    <div class="scroll_bar sb_thumb" style="height:0px;">
+                        <div class="scroll_bar_cont sb_thumb_cont" style="height:0px;"></div>
+                    </div>
+                </div>
+                <!-- 模拟滚动条 E -->
+            </div>
+            <div class="mod_song_info" id="song_info">
+                <div class="song_info__info">
+                    <a href="javascirpt:;" class="song_info__cover js_album" data-stat="y_new.player.info_area.albumpic">
+                        <img src="//y.gtimg.cn/mediastyle/yqq/extra/player_cover.png?max_age=31536000" id="song_pic" alt="" class="song_info__pic"/>
+                    </a>
+                    <div class="song_info__name" id="song_name"></div>
+                    <div class="song_info__singer" id="singer_name"></div>
+                    <div class="song_info__album" id="album_name"></div>
+                </div>
+                <div class="song_info__lyric">
+                    <div class="song_info__lyric_box js_lyric_box">
+                        <!-- 控制song_info__lyric_inner来做滚动 -->
+                        <div class="song_info__lyric_inner qrc_ctn" id="qrc_ctn" data-mod="1">
+                        </div>
+                    </div>
+                </div>
+                <a href="javascript:;" class="btn_lang btn_lang--select js_trans_btn" style="display:none;"><i class="icon_txt">开启音译歌词</i></a>
+            </div>
+        </div>
+        <!-- 纯净模式 -->
+        <div class="player_style_only js_box js_simp_box" style="display:none;">
+            <div class="mod_only_lyric js_lyric_box">
+                <!-- 控制only_lyric__inner来做滚动 -->
+                <div class="only_lyric__inner qrc_ctn" data-mod="2">
+                </div>
+            </div>
+            <a href="javascript:;" class="btn_lang btn_lang--select js_trans_btn" style="display:none;"><i class="icon_txt">开启音译歌词</i></a>
+        </div>
+    </div>
+    <div class="player__ft" id="opbanner">
+        <a href="javascript:;" class="btn_big_prev" title="alt+←"><span class="icon_txt">上一首</span></a>
+        <a href="javascript:;" class="btn_big_play" id="btnplay" title="[空格]"><span class="icon_txt">播放</span></a>
+        <a href="javascript:;" class="btn_big_next" title="alt+→"><span class="icon_txt">下一首</span></a>
+        <!--歌曲详情-->
+        <div class="player_music">
+            <!--详细信息S-->
+            <div class="player_music__info" id="sim_song_info"><a href="" onclick="setStatCookie&amp;&amp;setStatCookie();" title="告白气球" class="js_song" data-stat="y_new.player.info_area.songname" data-mid="003o2fV02IlSMg" data-id="213023158" data-songtype="0" data-disstid="" rel="noopener nofollow" target="_blank">告白气球</a> - <a href="https://y.qq.com/n/yqq/singer/004LV0lb4fOw89.html#stat=y_new.player.info_area.singername" onclick="setStatCookie&amp;&amp;setStatCookie();" title="周杰伦" class="js_singer" data-stat="y_new.player.info_area.singername" data-singermid="004LV0lb4fOw89" rel="noopener nofollow" target="_blank">周杰伦</a></div>
+            <div class="player_music__time" id="time_show">00:00 / 03:35</div>
+            <!--详细信息E-->
+            <div class="player_progress" id="progress">
+                <div class="player_progress__inner" id="spanplayer_bgbar" title="[快进ctrl+alt+→][快退ctrl+alt+←]">
+                    <div class="player_progress__load" id="downloadbar" style="width: 100%;"></div>
+                    <div class="player_progress__play" style="width: 2%;" id="spanplaybar"><i class="player_progress__dot" id="spanprogress_op"></i></div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <a href="javascript:;" class="btn_big_style_order" id="play_mod" title="顺序播放[O]"><span class="icon_txt">顺序播放[O]</span></a>
+        </div>
+        <a href="javascript:;" class="btn_big_like js_btn_fav" title="喜欢[V]"><span class="icon_txt">喜欢[V]</span></a>
+        <a href="javascript:;" class="btn_big_down js_btn_down" title="下载[D]"><span class="icon_txt">下载[D]</span></a>
+        <a class="mod_btn_comment js_into_comment" data-stat="y_new.player.gotocomment" href="javascript:;"  target="_blank"><span class="icon_txt">无评论</span></a>
+        <a href="javascript:;" class="btn_big_only" id="simp_btn" title="打开纯净模式[C]"><span class="icon_txt">打开纯净模式[C]</span></a>
+        <!-- <a href="javascript:;" class="btn_big_only btn_big_only--on"><span class="icon_txt">关闭纯净模式</span></a> -->
+        <div class="player_progress player_voice" id="voice">
+            <a href="javascript:;" class="btn_big_voice" id="spanmute" title="关闭声音[M]"><span class="icon_txt">关闭声音[M]</span></a>
+            <!-- <a href="javascript:;" class="btn_big_voice btn_big_voice--no"><span class="icon_txt">打开声音</span></a> -->
+            <div class="player_progress__inner" id="spanvolume" title="调节音量 [增大alt+↑][减小alt+↓]">
+                <div class="player_progress__play" style="width:50%;" id="spanvolumebar"><i class="player_progress__dot" id="spanvolumeop"></i></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bg_player_mask"></div>
+<div class="bg_player" style="background-image:url(//y.gtimg.cn/mediastyle/yqq/extra/player_cover.png?max_age=31536000);" id="backImg"></div>
+<script src="../../../js/player.js"></script>
+<script>
+
+</script>
+
+</body>
+</html>

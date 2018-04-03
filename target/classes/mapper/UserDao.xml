@@ -14,7 +14,7 @@
     </select>
 
     <insert id="register" parameterType="User">
-        INSERT INTO users(username,password,role_id,create_time,update_time) VALUES (#{username},#{password},#{roleId},#{createtime},#{updatetime})
+        INSERT INTO users(username,password,role_id,create_time,update_time) VALUES (#{username},#{password},#{role_id},#{create_time},#{update_time})
     </insert>
 
 </mapper>

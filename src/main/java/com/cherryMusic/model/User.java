@@ -1,5 +1,11 @@
 package com.cherryMusic.model;
 
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.enums.IdType;
+
+import javax.persistence.Table;
+import java.io.Serializable;
 import java.sql.Date;
 
 /**
@@ -14,25 +20,46 @@ import java.sql.Date;
  UNIQUE KEY `id` (`id`)
  ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
  */
-public class User {
-    public User(int id, String username, String password,int roleId, Date createtime, Date updatetime) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.roleId = roleId;
-        this.createtime = createtime;
-        this.updatetime = updatetime;
-    }
+@TableName("users")
+public class User implements Serializable {
 
     public User() {
     }
 
+    @TableId(value = "id", type = IdType.AUTO)
     private int id;
     private String username;
     private String password;
-    private int roleId;
-    private Date createtime;
-    private Date updatetime;
+    private int role_id;
+    private String create_time;
+    private String update_time;
+
+    public int getRole_id() {
+        return role_id;
+    }
+
+    public void setRole_id(int role_id) {
+        this.role_id = role_id;
+    }
+
+    public String getCreate_time() {
+        return create_time;
+    }
+
+    public void setCreate_time(String create_time) {
+        this.create_time = create_time;
+    }
+
+    public String getUpdate_time() {
+        return update_time;
+    }
+
+    public void setUpdate_time(String update_time) {
+        this.update_time = update_time;
+    }
+
+
+
 
     public int getId() {
         return id;
@@ -58,27 +85,7 @@ public class User {
         this.password = password;
     }
 
-    public int getRoleId() {
-        return roleId;
-    }
 
-    public void setRoleId(int roleId) {
-        this.roleId = roleId;
-    }
 
-    public Date getCreatetime() {
-        return createtime;
-    }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
-    }
-
-    public Date getUpdatetime() {
-        return updatetime;
-    }
-
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
-    }
 }

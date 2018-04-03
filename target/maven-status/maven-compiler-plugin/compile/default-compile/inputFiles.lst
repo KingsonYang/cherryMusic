@@ -1,7 +1,15 @@
 D:\Graduation_design\cherryMusic\src\main\java\com\cherryMusic\dao\UserDao.java
-D:\Graduation_design\cherryMusic\src\main\java\com\cherryMusic\model\User.java
 D:\Graduation_design\cherryMusic\src\main\java\com\cherryMusic\service\impl\UserServiceImpl.java
+D:\Graduation_design\cherryMusic\src\main\java\com\cherryMusic\controller\MusicController.java
 D:\Graduation_design\cherryMusic\src\main\java\com\cherryMusic\service\IUserService.java
-D:\Graduation_design\cherryMusic\src\main\java\com\cherryMusic\common\Message.java
+D:\Graduation_design\cherryMusic\src\main\java\com\cherryMusic\util\MD5Util.java
+D:\Graduation_design\cherryMusic\src\main\java\com\cherryMusic\dao\MusicsDao.java
 D:\Graduation_design\cherryMusic\src\main\java\com\cherryMusic\controller\UserController.java
+D:\Graduation_design\cherryMusic\src\main\java\com\cherryMusic\service\IMusicsService.java
+D:\Graduation_design\cherryMusic\src\main\java\com\cherryMusic\model\User.java
+D:\Graduation_design\cherryMusic\src\main\java\com\cherryMusic\util\ToolUtil.java
+D:\Graduation_design\cherryMusic\src\main\java\com\cherryMusic\model\Musics.java
+D:\Graduation_design\cherryMusic\src\main\java\com\cherryMusic\common\Message.java
+D:\Graduation_design\cherryMusic\src\main\java\com\cherryMusic\service\impl\MusicsServiceImpl.java
+D:\Graduation_design\cherryMusic\src\main\java\com\cherryMusic\util\DateUtil.java
 D:\Graduation_design\cherryMusic\src\main\java\com\cherryMusic\controller\PageController.java

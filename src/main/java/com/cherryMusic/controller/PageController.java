@@ -1,12 +1,8 @@
 package com.cherryMusic.controller;
 
-import com.cherryMusic.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
@@ -14,23 +10,6 @@ import java.io.IOException;
  */
 @Controller
 public class PageController {
-
-    @RequestMapping(value = "/index")
-    public String index(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        User user = (User)request.getSession().getAttribute("loginUser");
-        if(user != null){
-            Cookie userCookie=new Cookie("loginUser",user.getUsername());
-            userCookie.setMaxAge(10*60);   //存活期为一个月 30*24*60*60
-            userCookie.setPath("/");
-            response.addCookie(userCookie);
-        }else{
-            Cookie userCookie=new Cookie("loginUser",null);
-            userCookie.setMaxAge(0);
-            userCookie.setPath("/");
-            response.addCookie(userCookie);
-        }
-        return "index.html";
-    }
 
     @RequestMapping(value = "/login")
     public String login(){
@@ -46,5 +25,21 @@ public class PageController {
     public String error(){
         return "404.html";
     }
+
+    @RequestMapping(value = "/")
+    public String index(){
+        return "index.html";
+    }
+
+    @RequestMapping(value = "/singer_list")
+    public String singer_list(){
+        return "singer_list.html";
+    }
+
+    @RequestMapping(value = "/test")
+    public String Test(){
+        return "test.html";
+    }
+
 
 }

@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* CSS Document */
+.con{background:url(../img/bg_detail.jpg) no-repeat 0 0;}
+a{text-decoration:none; color:#000;}
+i{ font-style:normal;}
+
+/*header***S****/
+/*header***E****/
+
+
+
+/*main***S****/
+.con{ width:100%;}
+.bottom{ width:100%; padding-top:60px;}
+.item{width:1200px; overflow:hidden; margin:auto;}
+.leftbox{width:178px; height:986px; border:1px solid #eaeaea; float:left; margin-right:30px;}
+.class_top{width:178px; padding-top:20px; margin-bottom:27px;}
+.class_top h2{font-size:18px; width:144px; height:40px; border-bottom:1px solid #ebebeb; font-weight:normal; margin-left:17px; margin-bottom:10px;}
+.class_top .top_one,.class_bottom .top_one{height:43px; width:144px;background-color:#31c27c; font-size:14px; line-height:22px; padding:8px 17px 9px 17px;}
+.class_top p,.class_bottom p{font-size:14px; line-height:38px; height:38px; padding:0 17px;}
+.class_top a:hover,.class_bottom a:hover{color:#31c27c;}
+.class_top .top_one a,.class_bottom .top_one a{color:#fff;}
+.class_top .top_one a:hover,.class_bottom .top_one a:hover{color:#fff;}
+.class_bottom .bottom_title{font-size:20px; height:60px; line-height:60px; border-bottom:1px solid #ebebeb; font-weight:normal; margin:0px 17px 18px 17px;}
+.rightbox{ float:left; width:990px;}
+.right_title{height:43px; margin-bottom:31px;}
+.right_title h3{font-size:24px; float:left;height:24px; line-height:24px;  margin-top:19px; margin-right:16px;}
+.right_title span{display:block; float:left; margin-right:16px; font-size:12px; margin-top:26px; height:12px; line-height:12px;}
+.rightbox .right_title a:hover{color:#31c27c;}
+.right_title .time{font-size:10px; margin-top:27px;}
+.right_menu{height:40px; overflow:hidden; margin-bottom:20px;}
+.right_menu li{float:left;}
+.right_menu a{display:block; float:left; padding:11px 23px; height:16px; width:75px; border:1px solid #31c27c; background-color:#31c27c; color:#fff; margin-right:6px; }
+.right_menu a img{float:left; margin-right:6px;}
+.right_menu span{font-size:12px; line-height:16px; float:left;}
+.right_menu .sec,.right_menu .thi,.right_menu .last{ border:1px solid #c9c9c9; background:none; color:#000;}
+.right_menu .sec img{margin-left:5px;}
+.right_menu .thi img{margin-left:12px;}
+.right_menu .last img{ margin-top:2px;}
+.right_menu .last{padding:12px 23px; height:14px;}
+.right_menu a:hover{background:#CCC;}
+.right_menu .first:hover{background:#093;}
+.music{width:990px; overflow:hidden;}
+.music_title{ height:50px; background-color:#fbfbfd;}
+.music_title span{float:left; font-size:12px; color:#999; line-height:50px; margin-left:123px; }
+.music_title .sec{ float:left; margin-left:546px; }
+.music_title .thi{ float:right; margin-left:0px; margin-right:60px;}
+.mulist{ overflow:hidden;}
+.mulist li{height:80px;}
+.toprank{width:44px; text-align:right; float:left; fint-size:18px; color:#333333; line-height:80px; margin-right:25px;}
+.first_toprank{color:#ff4222;}
+.percent{width:30px; float:left; margin-top:28px;text-align:center; margin-right:24px;}
+.percent img{ margin-bottom:5px; display:inline-block; }
+.percent p{text-align:center; font-size:10px; height:10px; line-height:10px;}
+.special{width:572px; height:70px; padding-top:5px; float:left;}
+.special a{float:left; display:block; font-size:12px; line-height:70px; height:70px; }
+.special a:hover{color:#31c27c;}
+.special a img{width:70px; height:70px; margin-right:20px;}
+.name{float:left; width:180px; height:80px; line-height:80px; font-size:12px; margin-right:30px;}
+.name a:hover{color:#31c27c;}
+.min{ float:left; font-size:10px; height:80px; line-height:80px;}
+.secmulist{ background-color:#fbfbfd;}
+.number{height:50px; width:296px; overflow:hidden; margin-left:244px; margin-top:60px; margin-bottom:60px;}
+.number a{padding:0 21px; height:48px; line-height:50px; font-size:12px; color:#a2a2a2; float:left; display:block; margin-right:10px;}
+.number .number_first{background-color:#31c27c; color:#fff;}
+.number .last{ margin-right:0px;}
+.number .last span{line-height:50px; text-align:center; font-size:10px; display:block; float:left;}
+.number a:hover{ background-color:#31c27c; color:#fff;}
+/*main***E****/
+
+
+
+/*footer***S****/
+/*footer***E****/
