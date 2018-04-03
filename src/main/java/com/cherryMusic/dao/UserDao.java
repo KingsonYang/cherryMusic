@@ -8,4 +8,8 @@ import org.springframework.stereotype.Repository;
  */
 public interface UserDao {
     User selectUser(User user);
+
+    User checkUser(String username);
+
+    void register(User user);
 }

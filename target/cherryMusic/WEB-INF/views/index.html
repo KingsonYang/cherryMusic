@@ -1,25 +1,76 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>test</title>
-</head>
-<script>
-    function selectUser() {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function () {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById("test").innerHTML = xmlhttp.responseText;
+<!doctype html>
+<html class="imageBg">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <script type="text/javascript" src="../../js/jquery-3.3.1.js"></script>
+        <style>
+            .hide {
+                display: none;
             }
-        }
-        xmlhttp.open("POST", "user/showUser.do", true);
-        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xmlhttp.send("id=1");
-    }
-</script>
-<body>
-<p id="test">Hello World!</p>
-<button type="button" onclick="selectUser()">onclick test</button>
-<a href="WEB-INF/views/login.html"></a>
-</body>
+        </style>
+    </head>
+    <body>
+        <div id="loginUser">
+            <span class="user"></span>
+            <a href="" onclick="signup()" class="hide">退出登录</a>
+        </div>
+        <div id="userCheck">
+            <a href="login.html">登录</a>
+            <a href="register.html">注册</a>
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                init();
+            })
+
+            function init(){
+                $.ajax({
+                    url : "index",
+                    success : function () {
+                        var cookie=document.cookie;
+                        console.log(cookie);
+                        var name = getCookie('loginUser');
+                        if(name != null){
+                            alert(name+"欢迎您！");
+                            $(".user").text(name+"欢迎您！");
+                            $("#loginUser").children("a").removeClass("hide");
+                            $("#userCheck").addClass("hide");
+                        }else{
+                            $("#userCheck").removeClass("hide");
+                            $("#loginUser").children("a").addClass("hide");
+                        }
+                    }
+                })
+            }
+
+            function getCookie(name)
+            {
+                var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+
+                if(arr=document.cookie.match(reg))
+
+                    return unescape(arr[2]);
+                else
+                    return null;
+            }
+            function signup() {
+                $.ajax({
+                    url:"user/signup",
+                    type:"POST",
+                    dataType:"json",
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',//防止乱码
+                    success:function(data){
+                        /*if(data.msg == "200"){
+                            window.location.reload();
+                        }*/
+
+                            //window.location.href = "index";//跳转到登录页面
+                    }
+
+                })
+            }
+        </script>
+    </body>
 </html>

@@ -7,6 +7,12 @@ import com.cherryMusic.model.User;
  */
 public interface IUserService {
 
-    public User selectUser(User user);
+    User selectUser(User user);
+
+    User checkUser(String username);
+
+    void register(User user);
+
+
 
 }

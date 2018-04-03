@@ -120,6 +120,25 @@
       <artifactId>spring-test</artifactId>
       <version>${spring.version}</version>
     </dependency>
+    <!--jstl.jar.-->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
+
+    <!--standard.jar-->
+    <dependency>
+      <groupId>taglibs</groupId>
+      <artifactId>standard</artifactId>
+      <version>1.1.2</version>
+    </dependency>
+    <!-- java获取mp3时长 -->
+    <dependency>
+      <groupId>org</groupId>
+      <artifactId>jaudiotagger</artifactId>
+      <version>2.0.3</version>
+    </dependency>
 
   </dependencies>
   <build>

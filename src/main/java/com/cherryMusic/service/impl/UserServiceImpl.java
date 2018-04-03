@@ -21,4 +21,12 @@ public class UserServiceImpl implements IUserService{
     public User selectUser(User user) {
         return this.userDao.selectUser(user);
     }
+
+    public void register(User user) {
+        this.userDao.register(user);
+    }
+
+    public User checkUser(String username) {
+        return this.userDao.checkUser(username);
+    }
 }
